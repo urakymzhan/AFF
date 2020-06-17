@@ -1,22 +1,45 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Home from './components/Home.js';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-        <h3>Asian Film Festivals</h3>
-        <div>
-          Create react project - Guliza<br/>
-          Come up with react libraries to use - bootstrap, googe map, etc? - Kushtar<br/>
-          Come up with components - Aselia, Aidai<br/>
-          state data, state data for every component  - Aselia, Aidai<br/>
-          How to insert google map location? Coordinates? longitude/latitude? Is it free? - Adilet<br/>
-          Pagination - buttons? Scroll? - Uzak<br/>
-          Filtering data - how to filter - Adilet<br/>
-        </div>
-    </div>
+    <Router>
+      <div>
+        <ul>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/about">About</Link>
+          </li>
+        </ul>
+
+        <hr />
+
+        <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route path="/about">
+            <About />
+          </Route>
+        </Switch>
+      </div>
+    </Router>
   );
 }
 
-export default App;
+
+function About() {
+  return (
+    <div>
+      <h2>About</h2>
+    </div>
+  );
+}
