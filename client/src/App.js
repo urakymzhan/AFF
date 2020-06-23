@@ -1,5 +1,7 @@
 import React from "react";
 import Home from './components/Home.js';
+import Toggle from './Toggle';
+import AutoCompleteText from './components/AutoCompleteText';
 import {
   BrowserRouter as Router,
   Switch,
@@ -13,10 +15,12 @@ export default function App() {
       <div>
         <ul>
           <li>
-            <Link to="/">Home</Link>
+            <Link class="nav" to="/">Home</Link>
           </li>
           <li>
-            <Link to="/about">About</Link>
+            <Link class="nav" to="/about">About</Link>
+            <Toggle text="dynamic text!"/>
+            <AutoCompleteText/>
           </li>
         </ul>
 
